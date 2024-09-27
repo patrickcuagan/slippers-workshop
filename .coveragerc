@@ -1,0 +1,16 @@
+[run]
+source =
+    ./workshop/
+command_line = ./manage.py test --noinput --parallel --settings=workshop.settings.test
+concurrency = multiprocessing
+branch = True
+omit =
+    **/tests.py
+    **/test_*.py
+    **/migrations/*.py
+    workshop/settings/*.py
+
+[report]
+sort = cover
+skip_covered = true
+skip_empty = true

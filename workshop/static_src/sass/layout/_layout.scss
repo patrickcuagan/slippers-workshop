@@ -1,0 +1,28 @@
+@use 'config' as *;
+
+.layout {
+    background-color: $color--secondary;
+    max-width: $site-width;
+    margin: 0 auto;
+    padding: $grid;
+
+    &--sidebar {
+        @include media-query(large) {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+
+    &--three {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &--two {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

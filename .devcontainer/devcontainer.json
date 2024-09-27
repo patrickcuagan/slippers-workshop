@@ -1,0 +1,19 @@
+// For format details, see https://containers.dev/implementors/json_reference/
+{
+  "name": "Workshop",
+  "dockerComposeFile": [],
+  "service": "web",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "bash",
+        "python.pythonPath": "/usr/local/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "editorconfig.editorconfig"
+      ]
+    }
+  }
+}

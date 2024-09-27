@@ -1,0 +1,71 @@
+@use 'config' as *;
+@use 'sass:color';
+
+.card {
+    $root: &;
+    padding: 20px;
+    background-color: $color--tertiary;
+    // Extra border for high-contrast mode users.
+    border: 1px solid transparent;
+    transition: background-color $transition;
+    border-radius: 12px;
+    border-color: $color--off-black;
+
+    &--vertical {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &--horizontal {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    &:hover {
+        background-color: color.adjust($color--tertiary, $lightness: -10%);
+    }
+
+    &__image {
+        overflow: hidden;
+        flex-shrink: 0;
+        
+        #{$root}--vertical & {
+            margin-bottom: 20px;
+            max-height: 340px;
+        }
+
+        #{$root}--horizontal & {
+            max-height: 200px;
+            max-width: 150px;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        @include font-size(heading-five);
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    &__metadata {
+        @include font-size(supporting);
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+
+        svg {
+            fill: black;
+        }
+    }
+}
+
+.card-with-image {
+    &:only-child {
+        max-width: 260px;
+    }
+}

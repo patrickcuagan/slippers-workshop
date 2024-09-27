@@ -1,0 +1,72 @@
+/*
+    Text and font overrides for tbxforms.
+*/
+
+@use 'config' as *;
+
+// ----------------------------------------------------------------------------
+// Override vendor mixins (located within tbxforms).
+
+@mixin tbxforms-font-size($size, $line-height: false, $important: false,) {
+    // Overridden to do nothing
+}
+
+@mixin tbxforms-font(
+    $size,
+    $weight: regular,
+    $tabular: false,
+    $line-height: false
+) {
+    // Overridden to do nothing
+}
+
+// ----------------------------------------------------------------------------
+// Override font sizes to use our `font-size` scale.
+
+// Field text.
+.tbxforms-file-upload,
+.tbxforms-input,
+.tbxforms-select,
+.tbxforms-textarea,
+.tbxforms-hint,
+.tbxforms-error-message {
+    @include font-size(body);
+}
+
+// Checkbox and radio fields.
+.tbxforms-checkboxes .tbxforms-label,
+.tbxforms-radios .tbxforms-label,
+.tbxforms-checkboxes__divider,
+.tbxforms-radios__divider {
+    @include font-size(body-feature);
+}
+
+// Field labels and legends.
+.tbxforms-label,
+.tbxforms-fieldset__legend {
+    @include font-size(heading-five);
+
+    &--xl {
+        @include font-size(heading-three);
+    }
+    &--l {
+        @include font-size(heading-four);
+    }
+    &--m {
+        // No modifier needed as this is the default.
+    }
+    &--s {
+        @include font-size(body-feature);
+    }
+}
+
+// Error summary.
+.tbxforms-error-summary {
+    &__title {
+        @include font-size(heading-four);
+    }
+    &__list li, 
+    &__list a {
+        @include font-size(body-feature);
+    }
+}
