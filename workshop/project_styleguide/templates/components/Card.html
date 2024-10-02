@@ -1,0 +1,44 @@
+---
+from workshop.images.models import CustomImage
+
+props.defaults = {
+    "variant": "vertical",
+}
+
+props.types = {
+    "variant": Optional[str],
+    "image": CustomImage,
+    "href": str,
+    "title": str,
+    "description": str,
+}
+
+classes = "card"
+title_classes = "card__title"
+
+variant = props.get('variant')
+if variant == 'vertical':
+    classes += " card--vertical"
+    title_classes += " feature--two"
+elif variant == 'horizontal':
+    classes += " card--horizontal"
+
+props['classes'] = classes
+props['title_classes'] = title_classes
+---
+{% load wagtailcore_tags wagtailimages_tags navigation_tags %}
+
+<div class="{{ classes }}">
+    <div class="card__image">
+        {% image image height-500 %}
+    </div>
+
+    <div class="card__content">
+        <a href="{{ href }}" class="{{ title_classes }}">{{ title }}</a>
+        <div class="card__description">{{ description|richtext }}</div>
+
+        <div>
+            {{ children }}
+        </div>
+    </div>
+</div>
