@@ -102,6 +102,7 @@ INSTALLED_APPS = [
     "pattern_library",
     "wagtailaccessibility",
     "birdbath",
+    "slippers",
     # Django
     "django.contrib.admin",
     "django.contrib.auth",
@@ -152,6 +153,7 @@ TEMPLATES = [
             ],
             "builtins": [
                 "pattern_library.loader_tags",
+                "slippers.templatetags.slippers",
             ],
         },
     }

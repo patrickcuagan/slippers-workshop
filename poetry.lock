@@ -2030,6 +2030,23 @@ files = [
 ]
 
 [[package]]
+name = "slippers"
+version = "0.6.2"
+description = "Build reusable components in Django without writing a single line of Python."
+optional = false
+python-versions = ">=3.8.0"
+files = [
+    {file = "slippers-0.6.2-py3-none-any.whl", hash = "sha256:739e05f85354becbf0a65daab831eea62557d89e7512042209ab629af4378bca"},
+    {file = "slippers-0.6.2.tar.gz", hash = "sha256:4cb555b8822ba0d404e5405723f5d723994022c29046008ee917081031bc0cf1"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+PyYAML = ">=5.4.0"
+typeguard = ">=2.13.3,<3.0.0"
+typing-extensions = ">=4.4.0"
+
+[[package]]
 name = "soupsieve"
 version = "2.6"
 description = "A modern CSS selector implementation for Beautiful Soup."
@@ -2126,6 +2143,21 @@ files = [
     {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
     {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
+
+[[package]]
+name = "typeguard"
+version = "2.13.3"
+description = "Run-time type checker for Python"
+optional = false
+python-versions = ">=3.5.3"
+files = [
+    {file = "typeguard-2.13.3-py3-none-any.whl", hash = "sha256:5e3e3be01e887e7eafae5af63d1f36c849aaa94e3a0112097312aabfa16284f1"},
+    {file = "typeguard-2.13.3.tar.gz", hash = "sha256:00edaa8da3a133674796cf5ea87d9f4b4c367d77476e185e80251cc13dfbb8c4"},
+]
+
+[package.extras]
+doc = ["sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme"]
+test = ["mypy", "pytest", "typing-extensions"]
 
 [[package]]
 name = "typing-extensions"
@@ -2551,4 +2583,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "d2bb02d10359142433232b5cea4956ec4683aedba24afd4d044a034491037fab"
+content-hash = "a9e255a66d87d360dc676cc5a0d72254c04c5481fbadcca8f4841a132c76e347"
