@@ -7,6 +7,16 @@
 
         {{ page.strapline }}
 
+        {% #ButtonLink variant="primary" href="https://torchbox.com" %}
+            Go to Torchbox
+        {% /ButtonLink %}
+
+        {% #ButtonLink variant="warning" href="https://example.com" %}
+            Warning link
+            
+            {% include "components/icons/icon.html" with name="magnifying-glass" %}
+        {% /ButtonLink %}
+
         {% include "components/share/share.html" %}
     </div>
 {% endblock %}
