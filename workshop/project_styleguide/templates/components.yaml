@@ -1,2 +1,3 @@
 components:
   ButtonLink: "components/ButtonLink.html"
+  Card: "components/Card.html"

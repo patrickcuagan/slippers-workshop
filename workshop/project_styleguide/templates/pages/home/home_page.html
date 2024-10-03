@@ -7,16 +7,31 @@
 
         {{ page.strapline }}
 
-        {% #ButtonLink variant="primary" href="https://torchbox.com" %}
-            Go to Torchbox
-        {% /ButtonLink %}
+        {% get_test_image as test_image %}
 
-        {% #ButtonLink variant="warning" href="https://example.com" %}
-            Warning link
-            
-            {% include "components/icons/icon.html" with name="magnifying-glass" %}
-        {% /ButtonLink %}
+        <h2>Vertical cards</h2>
+
+        <div class="grid grid--three">
+            {% for card in vertical_cards %}                
+                {% #Card href=card.href title=card.title description=card.description image=test_image %}
+                    <div class="card__metadata">
+                        {% include "components/icons/icon.html" with name="calendar" %}
+                        <p>{{ card.posted_on }}</p>
+                    </div>
+                {% /Card %}
+            {% endfor %}
+        </div>
+
+        <h2 style="margin-top: 20px;">Horizontal cards</h2>
+
+        <div class="grid grid--two">
+            {% for card in horizontal_cards %}
+                {% Card href=card.href title=card.title description=card.description image=test_image variant="horizontal" %}
+            {% endfor %}
+        </div>
 
         {% include "components/share/share.html" %}
     </div>
+
+    {% slippers_overlay %}
 {% endblock %}
